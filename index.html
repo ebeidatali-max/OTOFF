@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقييم علاج وظيفي تفاعلي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>تقييم علاج وظيفي</h1>
+
+        <form id="assessmentForm">
+            <div class="section info-section">
+                <h2 class="centered-title">المعلومات الخاصة بالطالب</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label for="studentName">اسم الطالب:</label>
+                        <input type="text" id="studentName" data-field="studentName">
+                    </div>
+                    <div class="info-item">
+                        <label for="dob">تاريخ الميلاد:</label>
+                        <input type="date" id="dob" data-field="dob">
+                    </div>
+                    <div class="info-item">
+                        <label for="idNumber">رقم الهوية:</label>
+                        <input type="text" id="idNumber" data-field="idNumber">
+                    </div>
+                    <div class="info-item">
+                        <label for="assessmentDate">تاريخ التقييم:</label>
+                        <input type="date" id="assessmentDate" data-field="assessmentDate">
+                    </div>
+                    <div class="info-item">
+                        <label for="schoolCode">رمز المدرسة:</label>
+                        <input type="text" id="schoolCode" data-field="schoolCode">
+                    </div>
+                    <div class="info-item">
+                        <label for="therapistName">اسم المعالج:</label>
+                        <input type="text" id="therapistName" data-field="therapistName">
+                    </div>
+                </div>
+
+                <div class="assessment-type">
+                    <label>نوع التقييم:</label>
+                    <div class="options" data-item="assessmentType">
+                        <span class="level check-option" data-value="initial">أولي</span>
+                        <span class="level check-option" data-value="reassessment">إعادة تقييم</span>
+                    </div>
+                </div>
+
+                <div class="textarea-item">
+                    <label for="medicalBackground">الخلفية الطبية للطالب:</label>
+                    <textarea id="medicalBackground" data-field="medicalBackground"></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="centered-title">البيئة التعليمية</h2>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>يستطيع</th>
+                            <th>لا يستطيع</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="edu1">
+                            <td>يجلس الطالب في الصف على كرسي وطاولة ملائمين</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="edu2">
+                            <td>يجلس الطالب بالصف على الفرشة</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="edu3">
+                            <td>يستخدم الطالب الايباد الموجود داخل الصف</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="edu4">
+                            <td>يستخدم الطالب البروجكتير داخل الصف</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2 class="centered-title">التنقل</h2>
+                <div class="single-choice-group">
+                    <label>نوع الكرسي الخاص بالطالب:</label>
+                    <div class="options" data-item="chairType">
+                        <span class="level" data-value="electric">كرسي كهربائي</span>
+                        <span class="level" data-value="adapted">كرسي مع ملائمات</span>
+                        <span class="level" data-value="manual">كرسي عادي للتنقل</span>
+                        <span class="level" data-value="walker">ووكر</span>
+                    </div>
+                </div>
+
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>مستقل</th>
+                            <th>مساعدة جزئية</th>
+                            <th>مساعدة كاملة</th>
+                            <th>غير مستقل</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="mobility1">
+                            <td>يتنقل مشيا على الأقدام</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="mobility2">
+                            <td>يتنقل الطالب زحفاً على الأطراف</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="mobility3">
+                            <td>يتنقل الطالب بواسطة كرسي متحرك خاص به</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="mobility4">
+                            <td>يتنقل الطالب باستخدام الووكر</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="mobility5">
+                            <td>ينتقل الطالب من الكرسي المتحرك إلى كرسي الصف</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="mobility6">
+                            <td>يتنقل الطالب من الكرسي المتحرك إلى كرسي الحمام</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="mobility7">
+                            <td>يتنقل الطالب من الكرسي المتحرك إلى تخت الحمام</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="mobility8">
+                            <td>يصعد الطالب الدرج</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="mobility9">
+                            <td>ينزل الطالب الدرج</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="mobility10">
+                            <td>يستخدم الطالب المصعد</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="mobility11">
+                            <td>يتنقل الطالب داخل مرافق المدرسة</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2 class="centered-title">المهارات الحياتية</h2>
+                <h3>الطعام</h3>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>يستطيع</th>
+                            <th>لا يستطيع</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="food1">
+                            <td>يتناول الطالب الطعام بشكل سليم</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="single-choice-group">
+                    <label>نسيج الطعام:</label>
+                    <div class="options" data-item="foodTexture">
+                        <span class="level" data-value="normal">عادي</span>
+                        <span class="level" data-value="coarse_ground">مطحون خشن</span>
+                        <span class="level" data-value="half_ground">نصف مطحون</span>
+                        <span class="level" data-value="fine_ground">مطحون ناعم</span>
+                        <span class="level" data-value="pureed">بيوريه (פיג)</span>
+                    </div>
+                </div>
+
+                <div class="single-choice-group">
+                    <label>يشرب الماء:</label>
+                    <div class="options" data-item="waterIntake">
+                        <span class="level" data-value="cup">كوب</span>
+                        <span class="level" data-value="bottle">قنينة رضاعة</span>
+                        <span class="level" data-value="straw_cup">كأس مع قشة</span>
+                    </div>
+                </div>
+
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>مستقل</th>
+                            <th>مساعدة جزئية</th>
+                            <th>مساعدة كاملة</th>
+                            <th>غير مستقل</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="food2">
+                            <td>يميّز الطالب أدوات الطعام واستخداماتها</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="food3">
+                            <td>يتوجه الطالب لطلب الطعام</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="food4">
+                            <td>يوجه الطالب الطعام نحو فمه</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="food5">
+                            <td>يتناول الطالب الساندويش</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="food6">
+                            <td>يتناول الطالب الطعام باستخدام الملعقة</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="food7">
+                            <td>يغرف الطالب الطعام باستخدام الملعقة</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="food8">
+                            <td>يضم الطالب شفتيه على الملعقة ويسحب الطعام</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="food9">
+                            <td>يبقي الطالب الطعام في الفم أثناء المضغ</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="food10">
+                            <td>يحافظ الطالب على نظافته ونظافة المكان من حوله أثناء الطعام</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>الحمام</h3>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>نعم</th>
+                            <th>لا</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="toilet1">
+                            <td>يلبس الطالب الحفاظ</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                        <tr data-item-id="toilet2">
+                            <td>يستطيع أن يضبط عملية التبول</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                        <tr data-item-id="toilet3">
+                            <td>يستطيع أن يضبط عملية الإخراج</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>يستطيع</th>
+                            <th>لا يستطيع</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="toilet4">
+                            <td>يطلب الذهاب إلى الحمام</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="toilet5">
+                            <td>يستطيع الذهاب إلى الحمام واستخدامه</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>ارتداء الملابس</h3>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>مستقل</th>
+                            <th>مساعدة جزئية</th>
+                            <th>مساعدة كاملة</th>
+                            <th>غير مستقل</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="dressing1">
+                            <td>يميّز الطالب قطع الملابس المناسبة</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="dressing2">
+                            <td>يلبس الطالب الجوارب</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="dressing3">
+                            <td>يخلع الطالب الجوارب</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="dressing4">
+                            <td>يلبس الطالب الحذاء</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="dressing5">
+                            <td>يخلع الطالب الحذاء</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="dressing6">
+                            <td>يغلق ويفتح السكوتش</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="dressing7">
+                            <td>يربط رباط الحذاء</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="dressing8">
+                            <td>يساعد في عملية اللباس</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="dressing9">
+                            <td>يفتح ويغلق السحاب</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="dressing10">
+                            <td>يلبس المعطف</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="dressing11">
+                            <td>يخلع المعطف</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>العناية الذاتية</h3>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>مستقل</th>
+                            <th>مساعدة جزئية</th>
+                            <th>مساعدة كاملة</th>
+                            <th>غير مستقل</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="selfcare1">
+                            <td>يغسل الطالب يديه</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="selfcare2">
+                            <td>يغسل الطالب وجهه</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="selfcare3">
+                            <td>ينظف الطالب أسنانه</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="selfcare4">
+                            <td>يمشط الطالب شعره</td>
+                            <td><span class="level check-option" data-value="1"></span></td>
+                            <td><span class="level check-option" data-value="2"></span></td>
+                            <td><span class="level check-option" data-value="3"></span></td>
+                            <td><span class="level check-option" data-value="4"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2 class="centered-title">المهارات الحركية</h2>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>يستطيع</th>
+                            <th>لا يستطيع</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="motor1">
+                            <td>لدى الطالب مدى حركي كامل في الذراع اليمنى AROM</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="motor2">
+                            <td>لدى الطالب مدى حركي كامل في الذراع اليسرى AROM</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="motor3">
+                            <td>لدى الطالب مدى حركي كامل في الذراع اليمنى PROM</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="motor4">
+                            <td>لدى الطالب مدى حركي كامل في الذراع اليسرى PROM</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="motor5">
+                            <td>لدى الطالب مدى حركي كامل في القدم اليمنى AROM</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="motor6">
+                            <td>لدى الطالب مدى حركي كامل في القدم اليسرى AROM</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="motor7">
+                            <td>لدى الطالب مدى حركي كامل في القدم اليمنى PROM</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="motor8">
+                            <td>لدى الطالب مدى حركي كامل في القدم اليسرى PROM</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="motor9">
+                            <td>لدى الطالب سيطرة على الرأس والجذع</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="motor10">
+                            <td>يحرك الطالب رأسه نحو اليمين واليسار</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2 class="centered-title">الجلوس</h2>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>يستطيع</th>
+                            <th>لا يستطيع</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="sitting1">
+                            <td>يجلس الطالب بدون دعم</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="sitting2">
+                            <td>يجلس الطالب مع دعم</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="sitting3">
+                            <td>يحافظ على التوازن في عملية الجلوس</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="centered-title">الوقوف</h2>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>يستطيع</th>
+                            <th>لا يستطيع</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="standing1">
+                            <td>يقف الطالب بدون دعم</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="standing2">
+                            <td>بحاجة إلى دعم عند الوقوف</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="standing3">
+                            <td>يحافظ على التوازن أثناء عملية الوقوف</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="standing4">
+                            <td>يلتقط الطالب الأغراض من الأرض</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2 class="centered-title">مهارات التركيز والانتباه</h2>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>يستطيع</th>
+                            <th>لا يستطيع</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="attention1">
+                            <td>فترة تركيزه ملائمة للفعالية</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="attention2">
+                            <td>ينفذ الإرشادات والأوامر</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="attention3">
+                            <td>يشارك كلامياً</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="attention4">
+                            <td>يشارك حركياً بالأنشطة</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="attention5">
+                            <td>ينتظر الدور</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="attention6">
+                            <td>ينهي المهمة المطلوبة منه</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="attention7">
+                            <td>مرونة في الانتقال بين الفعاليات</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="centered-title">مهارات الطاولة</h2>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>يستطيع</th>
+                            <th>لا يستطيع</th>
+                            <th>ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="table1">
+                            <td>لدى الطالب تتبع بصري</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="table2">
+                            <td>لدى الطالب تآزر عين يد</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="table3">
+                            <td>يقطع خط المنتصف</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="table4">
+                            <td>تآزر يد - يد</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="table5">
+                            <td>Hand-hand manipulation</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                        <tr data-item-id="table6">
+                            <td>In hand manipulation</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                            <td><input type="text" data-field="notes"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 class="centered-title">نوع القبضة</h2>
+                <div class="options multi-select" data-item="gripType">
+                    <span class="level check-option" data-value="cylindrical">Cylindrical</span>
+                    <span class="level check-option" data-value="spherical">Spherical</span>
+                    <span class="level check-option" data-value="hook">Hook</span>
+                    <span class="level check-option" data-value="pinch">Pinch</span>
+                    <span class="level check-option" data-value="tripod">Tripod</span>
+                    <span class="level check-option" data-value="lumbrical">Lumbrical</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="centered-title">الجانب الحسي</h2>
+                <table class="assessment-table">
+                    <thead>
+                        <tr>
+                            <th>البند</th>
+                            <th>نعم</th>
+                            <th>لا</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-item-id="sensory1">
+                            <td>يلف برأسه كاستجابة عند مناداة اسمه</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                        <tr data-item-id="sensory2">
+                            <td>قادر على الحفاظ على التواصل البصري مع الآخرين</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                        <tr data-item-id="sensory3">
+                            <td>يشير إلى الأشياء التي تثير اهتمامه</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                        <tr data-item-id="sensory4">
+                            <td>عادة ما يلعب بالألعاب دون وضعها في فمه</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                        <tr data-item-id="sensory5">
+                            <td>يستمتع باللعب بالألعاب ذات الملامس المختلفة</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                        <tr data-item-id="sensory6">
+                            <td>يستمتع باللعب بالألعاب الموسيقية المختلفة</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                        <tr data-item-id="sensory7">
+                            <td>يستمتع عند استخدام الماء</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                        <tr data-item-id="sensory8">
+                            <td>قادر على تهدئة نفسه عندما ينزعج</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                        <tr data-item-id="sensory9">
+                            <td>قادر على التهدئة بواسطة الهز واللمس والأصوات المريحة</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                        <tr data-item-id="sensory10">
+                            <td>يبكي ويهدئ شعوره عند الألم</td>
+                            <td><span class="level check-option" data-value="yes"></span></td>
+                            <td><span class="level check-option" data-value="no"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2 class="centered-title">الأهداف العلاجية العامة</h2>
+                <div id="generalGoalsContainer">
+                    </div>
+                <button type="button" class="add-goal-btn" data-goal-type="general">إضافة هدف عام</button>
+            </div>
+
+            <div class="section">
+                <h2 class="centered-title">الأهداف العلاجية الخاصة</h2>
+                <div id="specificGoalsContainer">
+                    </div>
+                <button type="button" class="add-goal-btn" data-goal-type="specific">إضافة هدف خاص</button>
+            </div>
+
+            <div class="section">
+                <h2 class="centered-title">ملاحظات المعالج</h2>
+                <div class="textarea-item">
+                    <textarea id="therapistNotes" data-field="therapistNotes"></textarea>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="centered-title">توصيات المعالج</h2>
+                <div class="textarea-item">
+                    <textarea id="therapistRecommendations" data-field="therapistRecommendations"></textarea>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button type="button" id="saveProgressBtn">حفظ التقدم مؤقتاً</button>
+                <button type="button" id="downloadPdfBtn">تنزيل كـ PDF</button>
+                <button type="button" id="downloadWordBtn">تنزيل كـ Word</button>
+                <button type="button" id="printBtn">طباعة</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
