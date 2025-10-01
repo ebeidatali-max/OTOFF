@@ -178,7 +178,7 @@ function downloadAsWord() {
     
     // إعداد رأس الملف
     let wordContent = `<h1 style="text-align: center; color: #38761d;">استمارة تقييم علاج وظيفي</h1>`;
-    wordContent += `<p style="text-align: center; font-size: 11pt; color: #555;">مدرسة البكرية</p>`;
+    wordContent += `<p style="text-align: center; font-size: 11pt; color: #555;">مدرسة البكرية-قسم العلاج الوظيفي</p>`;
     wordContent += `<p><strong>اسم الطالب:</strong> ${document.getElementById('student-name').value || 'غير محدد'}</p>`;
     wordContent += `<p><strong>تاريخ التقييم:</strong> ${document.getElementById('assessment-date').value || 'غير محدد'}</p>`;
     wordContent += `<p><strong>اسم المعالج:</strong> ${document.getElementById('therapist-name').value || 'غير محدد'}</p>`;
@@ -475,3 +475,4 @@ document.addEventListener('DOMContentLoaded', () => {
         element.addEventListener('change', saveTemporaryData);
     });
 });
+
